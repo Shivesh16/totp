@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/activity_home.xml" value="0.234375" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/activity_list.xml" value="0.234375" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/activity_login.xml" value="0.234375" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/activity_page1.xml" value="0.234375" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/activity_register.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/activity_scanner_view.xml" value="0.25" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/add_update_lay.xml" value="0.2" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/displaytotp.xml" value="0.234375" />
+        <entry key="..\:/Users/91944/v2-app/app/src/main/res/layout/serviceprovider.xml" value="0.234375" />
         <entry key="..\:/Users/cheye/AndroidStudioProjects/sampleApp/app/src/main/res/drawable/btn_bg.xml" value="0.3715" />
         <entry key="..\:/Users/cheye/AndroidStudioProjects/sampleApp/app/src/main/res/drawable/ic_add.xml" value="0.3725" />
         <entry key="..\:/Users/cheye/AndroidStudioProjects/sampleApp/app/src/main/res/drawable/ic_baseline_timer_24.xml" value="0.3725" />

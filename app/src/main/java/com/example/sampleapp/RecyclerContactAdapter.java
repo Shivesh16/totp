@@ -18,14 +18,25 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.apache.commons.codec.binary.Base32;
+import org.apache.commons.codec.binary.Hex;
+
 import java.util.ArrayList;
 import java.util.Random;
+
+import de.taimos.totp.TOTP;
 
 public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContactAdapter.ViewHolder > {
 
     Context context;
     ArrayList<ContactModel> arrContacts;
 
+    public static String getTOTPCode(String secretKey) {
+        Base32 base32 = new Base32();
+        byte[] bytes = base32.decode(secretKey);
+        String hexKey = Hex.encodeHexString(bytes);
+        return TOTP.getOTP(hexKey);
+    }
 
     RecyclerContactAdapter(Context context, ArrayList<ContactModel> arrContacts){
         this.context = context;
@@ -95,20 +106,22 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
         });
 
         holder.llRow.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.displaytotp);
 
-
                 TextView txtviewtotp;
                 txtviewtotp=dialog.findViewById(R.id.txtviewtotp);
                 Random random = new Random();
-                txtviewtotp.setText(""+random.nextInt(100000-10000)+1);
-
+                String secretKey="KA54QGQSZZVBUFIH3XACOAW2VNFKXXVV";
+                txtviewtotp.setText(""+getTOTPCode(secretKey));
+                System.out.println(getTOTPCode(secretKey));
+//                random.nextInt(100000-10000)+1
                 TextView timer;
                 timer= dialog.findViewById(R.id.timer);
-                new CountDownTimer(3000, 1000) {
+                new CountDownTimer(10000, 1000) {
                     @Override
                     public void onTick(long l) {
                         timer.setText( ""+l/1000);
@@ -117,7 +130,7 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
 
                     @Override
                     public void onFinish() {
-                        txtviewtotp.setText(""+random.nextInt(1000000-100000)+1);
+//                        txtviewtotp.setText(""+random.nextInt(1000000-100000)+1);
                         dialog.dismiss();
                     }
                 }.start();

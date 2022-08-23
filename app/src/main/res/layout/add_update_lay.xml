@@ -40,7 +40,7 @@
         android:id="@+id/edtnumber"
         android:hint="Enter Key"
         android:textColorHint="@color/design_default_color_secondary"
-        android:inputType="number"/>
+        android:inputType="text"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
